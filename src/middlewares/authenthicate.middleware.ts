@@ -36,7 +36,12 @@ declare global {
 
 export const authenticate = async (req: Request, _res: Response, next: NextFunction) => {
 
-    const accessToken = req.cookies[COOKIE_NAMES.ACCESS_TOKEN];
+    const authHeader = req.headers.authorization;
+    let accessToken = req.cookies[COOKIE_NAMES.ACCESS_TOKEN];
+
+    if (!accessToken && authHeader && authHeader.startsWith("Bearer ")) {
+        accessToken = authHeader.split(" ")[1];
+    }
 
     if (!accessToken) {
         throw new AppError(" Authentication required. No accessToken provided ", 401)
