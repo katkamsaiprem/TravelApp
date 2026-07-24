@@ -13,6 +13,7 @@ import { corsOptions } from "./middlewares/cors.middleware.js";
 import { wishlistRouter } from "./wishlist/wishlist.router.js";
 import venueRouter from "./venues/venues.router.js";
 import categoriesRouter from "./categories/categories.router.js";
+import bookingsRouter from "./bookings/bookings.router.js";
 
 
 
@@ -52,6 +53,7 @@ app.use("/api/v1/auth", authRouter);
 app.use("/api/v1/wishlist", wishlistRouter);
 app.use("/api/v1/venues", venueRouter);
 app.use("/api/v1/categories", categoriesRouter);
+app.use("/api/v1/bookings", bookingsRouter);
 
 app.get("/health-check", (_req: Request, res: Response<ApiResponse>) => {
     res.status(200).json({

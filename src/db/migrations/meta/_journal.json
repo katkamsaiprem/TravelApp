@@ -106,6 +106,13 @@
       "when": 1783787438892,
       "tag": "0014_condemned_sentinel",
       "breakpoints": true
+    },
+    {
+      "idx": 15,
+      "version": "7",
+      "when": 1784913356922,
+      "tag": "0015_next_hercules",
+      "breakpoints": true
     }
   ]
 }
