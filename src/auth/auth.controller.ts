@@ -31,7 +31,7 @@ export const registerController = async (req: Request, res: Response<ApiResponse
 
     res.status(201).json({
         success: true,
-        data: { user },
+        data: { user, accessToken: tokens.accessToken },
         message: "Account created successfully"
     })
 
@@ -52,7 +52,7 @@ export const loginController = async (req: Request, res: Response<ApiResponse>):
 
     res.status(200).json({
         success: true,
-        data: { user },
+        data: { user, accessToken: tokens.accessToken },
         message: "Login successful"
     })
 

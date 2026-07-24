@@ -42,6 +42,7 @@ export const authenticate = async (req: Request, _res: Response, next: NextFunct
     if (!accessToken && authHeader && authHeader.startsWith("Bearer ")) {
         accessToken = authHeader.split(" ")[1];
     }
+    console.log("Raw Token received:", accessToken);
 
     if (!accessToken) {
         throw new AppError(" Authentication required. No accessToken provided ", 401)
@@ -52,6 +53,7 @@ export const authenticate = async (req: Request, _res: Response, next: NextFunct
         decoded = verifyAccessToken(accessToken)
     }
     catch (err) { // ts types err as unknown 
+        console.error("Token verification failed:", err);
         if (err instanceof Error) { // this check tell ts that from here on ,err is an Error instance ,this unlocks access to its props
             //instanceof checks objects prototype chain and it returns true ,if Error.prototype is exists anywhere in err
             if (err.name === "TokenExpiredError")
