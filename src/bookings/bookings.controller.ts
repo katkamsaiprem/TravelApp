@@ -18,7 +18,7 @@ export const createOrderController = async (
         );
     }
 
-    const userId = (req as any).user?.id || 1; // replaced with auth middleware in production
+    const userId = (req as any).user?.id || 22;
 
     const data = await createOrderService({
         userId,
