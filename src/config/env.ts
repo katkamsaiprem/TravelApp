@@ -40,6 +40,8 @@ export const env = {
     ACCESS_TOKEN_EXPIRY: requireEnv("ACCESS_TOKEN_EXPIRY") as StringValue, // cast so jwt.sign accepts it as a valid duration (e.g. "15m","7d")
     REFRESH_TOKEN_EXPIRY: requireEnv("REFRESH_TOKEN_EXPIRY") as StringValue,
     COOKIE_SECRET: requireEnv("COOKIE_SECRET"),
+    RAZORPAY_KEY_ID: requireEnv("RAZORPAY_KEY_ID"),
+    RAZORPAY_KEY_SECRET: requireEnv("RAZORPAY_KEY_SECRET"),
 } as const; // as const(const assertion) makes two things happens ,properties becomes readonly , values becomes literal(custom data )types ("development" instead of string,...)
 
 
