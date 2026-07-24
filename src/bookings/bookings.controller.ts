@@ -18,7 +18,11 @@ export const createOrderController = async (
         );
     }
 
-    const userId = (req as any).user?.id || 22;
+    const userId = (req as any).user?.id;
+
+    if (!userId) {
+        throw new AppError("Unauthorized access. User context missing.", 401);
+    }
 
     const data = await createOrderService({
         userId,

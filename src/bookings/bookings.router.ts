@@ -1,13 +1,10 @@
 import { Router } from "express";
 import { createOrderController, verifyPaymentController } from "./bookings.controller.js";
+import { authenticate } from "../middlewares/authenthicate.middleware.js";
 
 const bookingsRouter = Router();
 
-// TODO: add authenticate middleware once frontend auth flow is wired up
-// bookingsRouter.post("/create-order", authenticate, createOrderController);
-// bookingsRouter.post("/verify-payment", authenticate, verifyPaymentController);
-
-bookingsRouter.post("/create-order", createOrderController);
-bookingsRouter.post("/verify-payment", verifyPaymentController);
+bookingsRouter.post("/create-order", authenticate, createOrderController);
+bookingsRouter.post("/verify-payment", authenticate, verifyPaymentController);
 
 export default bookingsRouter;
