@@ -23,10 +23,7 @@ export const createOrderSchema = z.object({
             .number({ error: "totalPayableAmount must be a number" })
             .positive("totalPayableAmount must be a positive number"),
 
-    }).refine(
-        (data) => new Date(data.checkOutDate) > new Date(data.checkInDate),
-        { message: "checkOutDate must be after checkInDate", path: ["checkOutDate"] }
-    ),
+    }),
 });
 
 
