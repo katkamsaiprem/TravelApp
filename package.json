@@ -1,14 +1,14 @@
 {
-  "name": "travelapp-api",
+  "name": "bookmypitch-api",
   "version": "1.0.0",
-  "description": "TravelApp API built with Express, TypeScript, PostgreSQL, Drizzle ORM, and Razorpay",
-  "homepage": "https://github.com/katkamsaiprem/TravelApp#readme",
+  "description": "BookMyPitch API built with Express, TypeScript, PostgreSQL, Drizzle ORM, and Razorpay",
+  "homepage": "https://github.com/katkamsaiprem/BookMyPitch#readme",
   "bugs": {
-    "url": "https://github.com/katkamsaiprem/TravelApp/issues"
+    "url": "https://github.com/katkamsaiprem/BookMyPitch/issues"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/katkamsaiprem/TravelApp.git"
+    "url": "git+https://github.com/katkamsaiprem/BookMyPitch.git"
   },
   "license": "ISC",
   "author": "",
