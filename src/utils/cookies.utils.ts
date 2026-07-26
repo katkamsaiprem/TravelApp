@@ -14,7 +14,7 @@ const BASE_COOKIE_CONFIG = {
 
     httpOnly: true,
     secure: isProduction, // https only in production , false in dev
-    sameSite: "strict",
+    sameSite: isProduction ? "none" : "strict", // 'none' is required for cross-origin cookies in production
 } as const
 
 
