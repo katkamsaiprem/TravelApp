@@ -6,7 +6,7 @@ import { AppError } from "./globalErrorHandler.middlewares.js";
 export const corsOptions: CorsOptions = {
     origin: (incomingOrigin: string | undefined, sendResultCallBack: (err: Error | null, allow?: boolean) => void) => {
 
-        const allowedOrigins = env.CORS_ORIGIN.split(',').map(origin => origin.trim());
+        const allowedOrigins = env.CORS_ORIGIN.split(',').map(origin => origin.trim().replace(/\/$/, ''));
         // allows client requests with no origin like postman, mobile apps or server to server
         if (!incomingOrigin) {
             return sendResultCallBack(null, true)
