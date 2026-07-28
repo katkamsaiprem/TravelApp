@@ -11,7 +11,7 @@ import { Pool } from "pg"
 
 const pool = new Pool({
     connectionString: env.DATABASE_URL,
-    max: 20, //max connections to kept open for db
+    max: 20, // Render Free Postgres allows up to 50 active connections, 20 is safe
     idleTimeoutMillis: 30000,// if connection is not used within 30sec then close    
     connectionTimeoutMillis: 2000, // if a req is waiting for more than 2 seconds then give up and throw error
     

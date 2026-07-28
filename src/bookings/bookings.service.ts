@@ -28,8 +28,8 @@ export const createOrderService = async (dto: CreateOrderInput & { userId: numbe
     const booking = await createBookingRepository({
         userId: dto.userId,
         venueId: dto.venueId,
-        checkInDate: new Date(dto.checkInDate),
-        checkOutDate: new Date(dto.checkOutDate),
+        startTime: new Date(dto.startTime),
+        endTime: new Date(dto.endTime),
         totalPayableAmount: dto.totalPayableAmount,
         status: "pending",
         razorpayOrderId: razorpayOrder.id,

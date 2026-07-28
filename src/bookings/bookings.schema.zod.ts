@@ -11,13 +11,13 @@ export const createOrderSchema = z.object({
             .int("venueId must be a whole number")
             .positive("venueId must be a positive number"),
 
-        checkInDate: z
-            .string({ error: "checkInDate is required" })
-            .datetime({ message: "checkInDate must be a valid ISO 8601 datetime string" }),
+        startTime: z
+            .string({ error: "startTime is required" })
+            .datetime({ message: "startTime must be a valid ISO 8601 datetime string" }),
 
-        checkOutDate: z
-            .string({ error: "checkOutDate is required" })
-            .datetime({ message: "checkOutDate must be a valid ISO 8601 datetime string" }),
+        endTime: z
+            .string({ error: "endTime is required" })
+            .datetime({ message: "endTime must be a valid ISO 8601 datetime string" }),
 
         totalPayableAmount: z
             .number({ error: "totalPayableAmount must be a number" })
