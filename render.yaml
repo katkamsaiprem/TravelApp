@@ -3,6 +3,7 @@ services:
     name: bookmypitch-api
     env: node
     region: singapore
+    plan: free
     buildCommand: npm install && npm run build
     startCommand: npm run start
     envVars:
