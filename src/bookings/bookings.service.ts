@@ -53,7 +53,10 @@ export const verifyPaymentService = async (dto: VerifyPaymentInput) => {
         .update(body)
         .digest("hex");
 
-    if (expectedSignature !== dto.razorpay_signature) {
+    const expectedBuffer = Buffer.from(expectedSignature, "utf-8");
+    const signatureBuffer = Buffer.from(dto.razorpay_signature, "utf-8");
+
+    if (expectedBuffer.length !== signatureBuffer.length || !crypto.timingSafeEqual(expectedBuffer, signatureBuffer)) {
         throw new AppError("Invalid payment signature", 400);
     }
 
